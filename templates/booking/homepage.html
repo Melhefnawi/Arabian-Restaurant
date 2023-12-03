@@ -1,0 +1,28 @@
+{% extends "booking/base.html" %} {% block content %}
+
+<!-- Sliding view for the homepage, showing the different varities of burger  -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <!-- rendering the burger images from Menu Model-->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ photo1.Featured_image.url }} " class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="{{ photo2.Featured_image.url }}" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="{{ photo3.Featured_image.url }}" class="d-block w-100" alt="..." />
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{%endblock%}

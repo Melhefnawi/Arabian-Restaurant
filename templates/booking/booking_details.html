@@ -1,0 +1,39 @@
+{% extends 'booking/base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- A card to show the details of the booking after submitting the form -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <!-- Booking Name goes in these h1 tags -->
+                            <h5 class="booking_2">Client Name: {{ booking.First_Name }} {{booking.Last_Name}}</h5>
+
+                            <p class="booking_2">Booking Time: {{ booking.Time }} | Booking Date: {{ booking.Date}}</p>
+                            <p class="booking_2"> Email address: {{booking.Email}}</p>
+                            <p class="booking_2">Phone Number: {{booking.Phone_Number}}</p>
+                            <p class="booking_2">People No: {{booking.People_No}}</p>
+
+                            <a href="{% url 'edit_booking' booking.Slug %}">
+                                <input class="btn btn-primary" type="button" value="Edit">
+                            </a>
+
+                            <a href="{% url 'delete_booking' booking.Slug %}">
+                                <input class="btn btn-danger" type="submit" value="Delete">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
